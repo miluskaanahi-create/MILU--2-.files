@@ -1,4 +1,4 @@
-# Ejemplo: Temperaturas diarias en varias ciudades durante varias semanas
+def procesar_temperaturas():
 
 # Definimos los datos:
 # 3 ciudades, 7 días por semana, 2 semanas
@@ -30,3 +30,4 @@ for i in range(len(temperaturas)):  # Recorre ciudades
             suma += temperaturas[i][j][k]
         promedio = suma / len(temperaturas[i][j])
         print(f"{semanas[j]}: {promedio:.2f} °C")
+
