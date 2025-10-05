@@ -1,0 +1,42 @@
+# -------------------------------------------------------------
+# Tarea: Lectura y Escritura en Archivos de Texto en Python
+# -------------------------------------------------------------
+
+# 1️⃣ ESCRITURA DE ARCHIVO DE TEXTO
+
+# Abrimos (o creamos) un archivo llamado "my_notes.txt" en modo escritura ('w').
+# Si el archivo ya existe, su contenido será reemplazado.
+file = open("my_notes.txt", "w", encoding="utf-8")
+
+# Escribimos tres o más líneas de notas personales.
+file.write("Primera nota: Recordar comprar flores.\n")
+file.write("Segunda nota: Llamar a mamá el domingo.\n")
+file.write("Tercera nota: Terminar el proyecto antes del viernes.\n")
+
+# Cerramos el archivo después de escribir.
+file.close()
+
+
+# 2️⃣ LECTURA DE ARCHIVO DE TEXTO
+
+# Abrimos el archivo en modo lectura ('r').
+file = open("my_notes.txt", "r", encoding="utf-8")
+
+# Leemos línea por línea usando el método readline()
+print("Contenido del archivo leído línea por línea:\n")
+
+# Creamos un contador de líneas
+contador = 1
+
+# Usamos un bucle para leer hasta que no haya más líneas
+while True:
+    linea = file.readline()  # Lee una línea del archivo
+    if not linea:  # Si readline() devuelve una cadena vacía, es el final del archivo
+        break
+    print(f"Línea {contador}: {linea}", end='')  # Mostramos la línea
+    contador += 1
+
+# Cerramos el archivo después de leer
+file.close()
+
+print("\n\nLectura finalizada y archivo cerrado correctamente.")
